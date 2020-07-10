@@ -18,3 +18,26 @@ padrão. Como os construtores serão implementados fica a critério de vocês;
 A implementação correta da classe Estabelecimento valerá 2 pontos a classe Cliente
 valerá 2 pontos e o método main valerá 1 ponto.
 */
+
+#ifndef ESTABELECIMENTO_H
+#define ESTABELECIMENTO_H
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <list>
+#include <Produto.h>
+
+class Estabelecimento {
+  public:
+    float faturamento;
+    std::list<Produto> estoque;
+    std::list<Produto> vendas;
+    Estabelecimento();
+    ~Estabelecimento();
+    void listar();
+    void venda(Produto produto);
+    void caixa();
+};
+
+#endif

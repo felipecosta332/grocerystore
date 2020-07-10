@@ -19,15 +19,22 @@ valerá 2 pontos e o método main valerá 1 ponto.
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-#include <string>
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
+#include <Produto.h>
 
 class Cliente {
-  private:
-    float saldo;
-    std::vector<std::string> sacola;
   public:
-    Cliente();
+    static int totalClientes;
+    float saldo;
+    std::vector<Produto> sacola;
+    Cliente(float saldo);
+    void compra(Produto produto);
+    void verSacola();
+    void registro();
 };
 
 #endif
