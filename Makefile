@@ -18,6 +18,10 @@ test: src/Test.cpp
 	$(CC) -std=c++11 -O2 -o bin/Test.exe $<
 	./bin/Test.exe
 
+files:
+	rm files/*.txt
+	rm files/caixa.csv
+
 clean:
 	rm -rf bin/*
 
