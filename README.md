@@ -4,7 +4,7 @@ Federal University of Rio Grande do Norte (UFRN) programming project of the "Pro
 
 ## How to compile the program
 
-If you are running Linux on your machine, open the terminal and follow the steps:
+If you are running Linux or macOS on your machine, open the terminal and follow the steps:
 
 - Access the project directory.
 - Type in the following command on the terminal: "make".
@@ -12,7 +12,7 @@ If you are running Linux on your machine, open the terminal and follow the steps
 
 ## How to run the program
 
-If you are running Linux on your machine, open the terminal and follow the steps:
+If you are running Linux or macOS on your machine, open the terminal and follow the steps:
 
 - Access the project directory.
 - Type in the following command on the terminal: "make run".
@@ -25,7 +25,7 @@ The full list of the program commands, what they do, what parameters they take a
 - ./Supermercado.exe: runs "Supermercado.exe"
 - make: compiles the source code
 - make run: compiles the source code and runs "Supermercado.exe"
-- make files: deletes output files
+- make trash: deletes output files
 - make clean: deletes the object files in the bin directory
 - make rmproper: runs "make clean" and deletes "Supermercado.exe"
 - make test: compiles and runs the "Test.cpp" source code file for the purpose of testing functions
