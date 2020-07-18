@@ -5,14 +5,14 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
 #include "Produto.h"
+#include "VectorSupermercado.h"
 
 class Cliente {
   public:
     static int totalClientes;
     float saldo;
-    std::vector<Produto> sacola;
+    VectorSupermercado<Produto> sacola;
     Cliente();
     ~Cliente();
     void compra(Produto produto);

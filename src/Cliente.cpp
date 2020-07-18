@@ -18,8 +18,8 @@ void Cliente::compra(Produto produto){
   } else {
     saldo -= produto.preco;
     for (int i = 0; i < sacola.size(); i++) {
-      if (sacola[i].codigo == produto.codigo) {
-        sacola[i].quantidade++;
+      if (sacola.elements[i].codigo == produto.codigo) {
+        sacola.elements[i].quantidade++;
         return;
       }
     }
@@ -32,8 +32,8 @@ void Cliente::verSacola(){
   char key;
   key = system("clear");
   for (int i = 0; i < sacola.size(); i++) {
-    std::cout << sacola[i].quantidade << " " << sacola[i].unidadeMedida << "s de " << 
-    sacola[i].produto << std::endl;
+    std::cout << sacola.elements[i].quantidade << " " << sacola.elements[i].unidadeMedida 
+    << "s de " << sacola.elements[i].produto << std::endl;
   }
   std::cout << "Aperte qualquer tecla para sair ";
   std::cin >> key;
@@ -47,9 +47,9 @@ void Cliente::registro(){
     std::ofstream writer(filename.str(), std::ios::out);
     writer << "COD,PRODUTO,UNIDADE DE MEDIDA,PREÇO,QUANTIDADE" << std::endl;
     for (int i = 0; i < sacola.size(); i++) {
-      writer << sacola[i].codigo << "," << sacola[i].produto << "," << 
-      sacola[i].unidadeMedida << ",\"R$ " << sacola[i].preco << "\"," << 
-      sacola[i].quantidade << std::endl;
+      writer << sacola.elements[i].codigo << "," << sacola.elements[i].produto << "," << 
+      sacola.elements[i].unidadeMedida << ",\"R$ " << sacola.elements[i].preco << "\"," << 
+      sacola.elements[i].quantidade << std::endl;
     }
     writer.close();
   }
