@@ -26,8 +26,22 @@ void App::runApp() {
         case '4':
           comprar(&cliente);
           break;
+        case '5':
+          mostrarFornecedor();
+          break;
+        case '6':
+          reabastecer();
+          break;
         case '0':
-          resetar();
+          std::cout << "Deseja realizar compras com um novo cliente?" << std::endl;
+          std::cout << "Aperte a tecla \'s\' para inicializar novo cliente." << std::endl;
+          std::cout << "Aperte qualquer outra tecla para finalizar o programa." << std::endl;
+          std::cin >> input;
+          if (input == 's') {
+            reset = true;
+          } else {
+            return;
+          }
           break;
       }
       if (reset) {
@@ -51,6 +65,8 @@ void App::showMenu(Cliente* cliente) {
   std::cout << "2) Verificar os produtos da loja." << std::endl;
   std::cout << "3) Ver o conteúdo da minha sacola." << std::endl;
   std::cout << "4) Comprar produto." << std::endl;
+  std::cout << "5) Listar os produtos do fornecedor." << std::endl;
+  std::cout << "6) Reabastecer o estoque." << std::endl;
   std::cout << "\n0) Finalizar compra.\n" << std::endl;
   std::cout << "Digite o código de uma das opções para continuar: ";
   std::cin >> input;
@@ -112,14 +128,38 @@ void App::comprar(Cliente* cliente) {
   }
 }
 
-void App::resetar() {
-  std::cout << "Deseja realizar compras com um novo cliente?" << std::endl;
-  std::cout << "Aperte a tecla \'s\' para inicializar novo cliente." << std::endl;
-  std::cout << "Aperte qualquer outra tecla para finalizar o programa." << std::endl;
+void App::mostrarFornecedor() {
+  /*
+• O menu no main deverá conter uma opção para listar os produtos do
+fornecedor e outra para o estabelecimento reabastecer o estoque, solicitando o
+produto e a quantidade;
+*/
+  mercado.fornecedor.listarProdutos();
+  std::cout << "Digite qualquer tecla para continuar: ";
   std::cin >> input;
-  if (input == 's') {
-    reset = true;
-  } else {
-    return;
+}
+
+void App::reabastecer() {
+  /*
+• O menu no main deverá conter uma opção para listar os produtos do
+fornecedor e outra para o estabelecimento reabastecer o estoque, solicitando o
+produto e a quantidade;
+*/
+  int quantidade;
+  std::string nomeProduto;
+  Produto* produto = nullptr;
+  mercado.fornecedor.listarProdutos();
+  std::cout << "Digite o nome do produto para ser reabastecido:" << std::endl;
+  getline(std::cin, nomeProduto);
+  getline(std::cin, nomeProduto);
+  std::cout << "Digite a quantidade desejada: ";
+  std::cin >> quantidade;
+  for (int i = 0; i < mercado.estoque.size(); i++) {
+    if (mercado.estoque.elements[i].produto == nomeProduto) {
+      produto = &mercado.estoque.elements[i];
+      mercado.fornecedor.repassarProdutos(produto, quantidade);
+      return;
+    }
   }
+  std::cout << "ESSE PRODUTO NÃO EXISTE NO ESTOQUE." << std::endl;
 }

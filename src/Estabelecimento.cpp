@@ -96,7 +96,7 @@ void Estabelecimento::listar() {
 void Estabelecimento::venda(Produto produto) {
   bool sold = false;
   for (int i = 0; i < estoque.size(); i++) {
-    if (estoque.elements[i].codigo == produto.codigo) {
+    if (estoque.elements[i].codigo == produto.codigo && estoque.elements[i].quantidade > 0) {
       std::cout << "PRODUTO DISPONÍVEL NO ESTOQUE." << std::endl;
       estoque.elements[i].quantidade--;
       for (int j = 0; j < vendas.size(); j++) {
@@ -108,9 +108,6 @@ void Estabelecimento::venda(Produto produto) {
       if (!sold) {
         produto.quantidade = 1;
         vendas.push_back(produto);
-      }
-      if (estoque.elements[i].quantidade == 0) {
-        estoque.remove(i);
       }
       return;
     }

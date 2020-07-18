@@ -15,9 +15,8 @@ reabastecer o estoque.csv);
 #include "VectorSupermercado.h"
 
 class Estabelecimento {
-  private:
-    Fornecedor fornecedor;
   public:
+    Fornecedor fornecedor;
     VectorSupermercado<Produto> estoque;
     VectorSupermercado<Produto> vendas;
     Estabelecimento();

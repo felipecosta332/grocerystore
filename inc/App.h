@@ -27,7 +27,8 @@ class App {
     void addSaldo(Cliente* cliente);
     void mostrarVitrine(Cliente* cliente);
     void comprar(Cliente* cliente);
-    void resetar();
+    void mostrarFornecedor();
+    void reabastecer();
 };
 
 #endif
