@@ -9,15 +9,34 @@
 #include "VectorSupermercado.h"
 
 class Cliente {
-  public:
+  private:
     static int totalClientes;
-    float saldo;
+    int totalItens;
+    int totalItensMercado;
+    int totalItensRestaurante;
+    double saldo;
+    double contaMercado;
+    double contaRestaurante;
+    double contaTotal;
+  public:
+    VectorSupermercado<Produto> conta;
     VectorSupermercado<Produto> sacola;
     Cliente();
     ~Cliente();
-    void compra(Produto produto);
+    void compraMercado(Produto produto);
+    void compraRestaurante(Produto produto);
     void verSacola();
+    void verConta();
     void registro();
+    int getTotalClientes();
+    int getTotalItens();
+    int getTotalItensMercado();
+    int getTotalItensRestaurante();
+    double getSaldo();
+    double getContaMercado();
+    double getContaRestaurante();
+    double getContaTotal();
+    void setSaldo(double saldo);
 };
 
 #endif

@@ -11,28 +11,20 @@ Restaurante;
 sim um cardápio e que Restaurante não faz utilização de Fornecedor;
 */
 
-#ifndef ESTABELECIMENTO_H
-#define ESTABELECIMENTO_H
+#ifndef RESTAURANTE_H
+#define RESTAURANTE_H
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include "Fornecedor.h"
-#include "Produto.h"
-#include "VectorSupermercado.h"
+#include "Estabelecimento.h"
 
-class Estabelecimento {
-  protected:
-    int totalItensVendas;
-    double faturamento;
-  public:
-    VectorSupermercado<Produto> vendas;
-    int getTotalItensVendas() {
-      return this->totalItensVendas;
-    };
-    double getFaturamento() {
-      return this->faturamento;
-    }
+class Restaurante : public Estabelecimento {
+    public:
+        VectorSupermercado<Produto> cardapio;
+        Restaurante();
+        ~Restaurante();
+        void listar();
+        void venda(Produto produto);
+        void caixa();
+        bool checar(std::string nome, Produto* produto);
 };
 
 #endif

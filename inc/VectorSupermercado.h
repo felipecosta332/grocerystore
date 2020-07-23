@@ -1,17 +1,9 @@
-/*
-• Deverá ser criada uma classe genérica chama vector_supemercado, onde essa
-classe deve funcionar da mesma forma que a estrutura vector. A sacola (classe
-Cliente), os produtos (classe Estabelecimento) e os produtos (classe
-Fornecedor) deverão utilizar a implementação do vector_supemercado ao invés
-do vector tradicional.
-*/
-
 #ifndef VECTORSUPERMERCADO_H
 #define VECTORSUPERMERCADO_H
 
 #include <iostream>
 
-template <class T> 
+template <class T>
 class VectorSupermercado {
   private:
     unsigned int vector_capacity;

@@ -1,6 +1,6 @@
 CC = g++
 FLAGS = -I inc -std=c++11 -O2 -o
-OBJECT = bin/App.o bin/Cliente.o bin/Estabelecimento.o bin/Fornecedor.o bin/Main.o
+OBJECT = bin/App.o bin/Cliente.o bin/Fornecedor.o bin/Main.o bin/Restaurante.o bin/Supermercado.o
 PROGRAM = ./Supermercado.exe
 
 all: $(PROGRAM)

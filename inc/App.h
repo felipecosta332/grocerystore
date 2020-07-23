@@ -1,61 +1,48 @@
 /*
-• O menu no main deverá conter uma opção para listar os produtos do
-fornecedor e outra para o estabelecimento reabastecer o estoque, solicitando o
-produto e a quantidade;
+• Na inicialização do programa o usuário deverá decidir se quer usar o
+Supermercado ou o Restaurante;
+• Quando o usuário utiliza o restaurante ele deve fazer um pedido informando o
+item do menu e a quantidade;
+• O usuário deve receber um saldo para gastar durante a inicialização do
+programa;
+• Para todo caso de erro inesperado, o programa deve usar exceção para tratar o
+problema;
 */
 
 #ifndef APP_H
 #define APP_H
 
 #include "Cliente.h"
-#include "Estabelecimento.h"
+#include "Restaurante.h"
+#include "Supermercado.h"
 #include "Produto.h"
 #include "VectorSupermercado.h"
 
 class App {
   private:
+    std::string line;
     bool reset;
     char input;
     int code;
-    float currency;
-    Estabelecimento mercado;
+    double currency;
+    Supermercado mercado;
+    Restaurante restaurante;
     Produto produto;
   public:
     App();
     void runApp();
-    void showMenu(Cliente* cliente);
+    void selectApp(Cliente* cliente);
+    void appSupermercado(Cliente* cliente);
+    void appRestaurante(Cliente* cliente);
     void addSaldo(Cliente* cliente);
     void mostrarVitrine(Cliente* cliente);
-    void comprar(Cliente* cliente);
+    void comprarMercado(Cliente* cliente);
     void mostrarFornecedor();
     void reabastecer();
+    void listarCardapio(Cliente* cliente);
+    void fazerPedido(Cliente* cliente);
+    void resetar(bool* reset);
+    void warning();
 };
 
 #endif
-
-/*
-Continuando o programa do Supermercado vocês irão criar uma classe
-chamada Fornecedor que será responsável por reabastecer o estoque;
-• A classe Fornecedor deverá conter apenas um atributo que é um vector
-genérico (explicado mais abaixo) de produtos (serão lidos do arquivo
-fornecedor.csv).
-• A classe Fornecedor deverá conter os seguintes métodos: listarProdutos
-(mostra todos os produtos disponíveis) e repassarProdutos (repassa para o
-estabelecimento os produtos solicitados na quantidade solicitada, diminuindo
-seus valores em fornecedor.csv);
-• A classe Estabelecimento deverá conter um novo método chamado reabastecer
-(esse método é responsável por pegar os produtos na classe Fornecedor e
-reabastecer o estoque.csv);
-• O menu no main deverá conter uma opção para listar os produtos do
-fornecedor e outra para o estabelecimento reabastecer o estoque, solicitando o
-produto e a quantidade;
-• Deverá ser criada uma classe genérica chama vector_supemercado, onde essa
-classe deve funcionar da mesma forma que a estrutura vector. A sacola (classe
-Cliente), os produtos (classe Estabelecimento) e os produtos (classe
-Fornecedor) deverão utilizar a implementação do vector_supemercado ao invés
-do vector tradicional.
-A atividade será avaliada de forma que a implementação e utilização correta da classe
-vector_supermercado valerá 2,5. A implementação e utilização correta da classe
-Fornecedor valerá 1,0 e as mudanças no main, Estabelecimento e Cliente valerão 0,5
-cada.
-*/
