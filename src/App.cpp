@@ -1,14 +1,3 @@
-/*
-• Na inicialização do programa o usuário deverá decidir se quer usar o
-Supermercado ou o Restaurante;
-• Quando o usuário utiliza o restaurante ele deve fazer um pedido informando o
-item do menu e a quantidade;
-• O usuário deve receber um saldo para gastar durante a inicialização do
-programa;
-• Para todo caso de erro inesperado, o programa deve usar exceção para tratar o
-problema;
-*/
-
 #include "App.h"
 
 App::App() : reset(true) {}
