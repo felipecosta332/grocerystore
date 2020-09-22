@@ -32,5 +32,5 @@ The full list of the program commands, what they do, what parameters they take a
 
 ## Links to clone the repository
 
-HTTPS: <https://github.com/felipecosta332/grocerystore.git>
-SSH: git@github.com:felipecosta332/grocerystore.git
+- HTTPS: <https://github.com/felipecosta332/grocerystore.git>
+- SSH: git@github.com:felipecosta332/grocerystore.git
