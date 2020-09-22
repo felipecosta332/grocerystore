@@ -29,3 +29,8 @@ The full list of the program commands, what they do, what parameters they take a
 - make clean: deletes the object files in the bin directory
 - make rmproper: runs "make clean" and deletes "Supermercado.exe"
 - make test: compiles and runs the "Test.cpp" source code file for the purpose of testing functions
+
+## Links to clone the repository
+
+HTTPS: <https://github.com/felipecosta332/grocerystore.git>
+SSH: git@github.com:felipecosta332/grocerystore.git
